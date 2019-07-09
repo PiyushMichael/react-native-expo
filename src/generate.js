@@ -1,12 +1,21 @@
 import React from 'react';
-import {StyleSheet,Text,View} from 'react-native';
+import {StyleSheet,Text,View,TouchableWithoutFeedback} from 'react-native';
 import {styles} from './styles';
 
-const generate = () => {
+const generate = (props) => {
 	return(
-		<View style={styles.generator}>
-			<Text style={{color: '#fff'}}>Add Number</Text>
-		</View>
+		<>
+			<TouchableWithoutFeedback onPress={props.pressAdd}>
+				<View style={styles.generator}>
+					<Text style={{color: '#fff'}}>Add Number</Text>
+				</View>
+			</TouchableWithoutFeedback>
+			<TouchableWithoutFeedback onPress={props.pressSub}>
+				<View style={styles.generator}>
+					<Text style={{color: '#fff'}}>Subtract Number</Text>
+				</View>
+			</TouchableWithoutFeedback>
+		</>
 	);
 };
 

@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
 	},
 	generator: {
 		backgroundColor: '#00bcd4',
+		margin: 5,
 		padding: 10,
 		width: '100%',
 		alignItems: 'center'
