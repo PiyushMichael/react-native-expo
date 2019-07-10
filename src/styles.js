@@ -31,5 +31,10 @@ export const styles = StyleSheet.create({
 		marginTop: 10,
 		padding: 10,
 		fontSize: 20
+	},
+	text: {
+		width: '100%',
+		backgroundColor: '#f3f3f3',
+		margin: 20
 	}
 });

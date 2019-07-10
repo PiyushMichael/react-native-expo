@@ -3,6 +3,7 @@ import { Platform,StyleSheet, Text, View } from 'react-native';
 import {styles} from './src/styles';
 import Generate from './src/generate';
 import Lister from './src/lister';
+import Input from './src/input';
 
 const instructions = Platform.select({
 	ios: 'isss an iphone :)',
@@ -12,7 +13,7 @@ type props={};
 
 class App extends Component<props> {
 	state = {
-		name: '',
+		text: 'enter text here...',
 		list: [20,87,43]
 	};
 	
@@ -26,6 +27,9 @@ class App extends Component<props> {
 		});
 		this.setState({list: arr});
 	};
+	typed = (event) => {
+		this.setState({text: event});
+	};
 	
 	render(){
 		return (
@@ -33,7 +37,8 @@ class App extends Component<props> {
 			<Text style={styles.box}>start working on the app!</Text>
 			<Text style={styles.box}>{instructions}</Text>
 			<Generate pressAdd={this.Add} pressSub={this.Sub} />
-			<Lister remove={this.Sub} list={this.state.list}/>
+			<Input typing={this.typed} value={this.state.text}/>
+			<Lister typing={this.typed} remove={this.Sub} list={this.state.list}/>
 		</View>
 		);
 	}

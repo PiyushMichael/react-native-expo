@@ -3,8 +3,7 @@ import {StyleSheet,Text,View,TouchableWithoutFeedback, TouchableOpacity} from 'r
 import {styles} from './styles';
 
 const generate = (props) => {
-	return(
-		<>
+	return	(<>
 			<TouchableOpacity style={styles.generator} onPress={props.pressAdd}>
 				<View>
 					<Text style={{color: '#fff'}}>Add Number in list</Text>
