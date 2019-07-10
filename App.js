@@ -21,7 +21,10 @@ class App extends Component<props> {
 		this.setState({list: [...this.state.list,random]});
 	};
 	Sub = (id) => {
-		(id);
+		const arr = this.state.list.filter((item,index) => {
+			return id != index;
+		});
+		this.setState({list: arr});
 	};
 	
 	render(){
