@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
+	scroller:{
+		margin: 1
+	},
 	container: {
 		flex: 1,
 		paddingTop: 50,
@@ -35,6 +38,15 @@ export const styles = StyleSheet.create({
 	text: {
 		width: '100%',
 		backgroundColor: '#f3f3f3',
-		margin: 20
+		marginTop: 10,
+		marginBottom: 10
+	},
+	user: {
+		width: '100%',
+		fontSize: 30,
+		borderWidth: 1,
+		borderColor: '#cecece',
+		padding: 10,
+		marginTop: 10
 	}
 });

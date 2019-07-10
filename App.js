@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { Platform,StyleSheet, Text, View } from 'react-native';
+import {Platform,StyleSheet, Text, View,ScrollView } from 'react-native';
 import {styles} from './src/styles';
 import Generate from './src/generate';
 import Lister from './src/lister';
 import Input from './src/input';
+import UserList from './src/user-list';
 
 const instructions = Platform.select({
 	ios: 'isss an iphone :)',
@@ -14,7 +15,8 @@ type props={};
 class App extends Component<props> {
 	state = {
 		text: 'enter text here...',
-		list: [20,87,43]
+		list: [20,87,43],
+		users: ['john','james','popeye']
 	};
 	
 	Add = () => {
@@ -30,16 +32,22 @@ class App extends Component<props> {
 	typed = (event) => {
 		this.setState({text: event});
 	};
+	addUser = () => {
+		this.setState({users: [...this.state.users,this.state.text]});
+	};
 	
 	render(){
 		return (
-		<View style={styles.container}>
-			<Text style={styles.box}>start working on the app!</Text>
-			<Text style={styles.box}>{instructions}</Text>
-			<Generate pressAdd={this.Add} pressSub={this.Sub} />
-			<Input typing={this.typed} value={this.state.text}/>
-			<Lister typing={this.typed} remove={this.Sub} list={this.state.list}/>
-		</View>
+		<ScrollView style={styles.scroller}>
+			<View style={styles.container}>
+				<Text style={styles.box}>start working on the app!</Text>
+				<Text style={styles.box}>{instructions}</Text>
+				<Input AddUser={this.addUser} typing={this.typed} value={this.state.text} />
+				<UserList  users={this.state.users} />
+				<Generate pressAdd={this.Add} pressSub={this.Sub} />
+				<Lister typing={this.typed} remove={this.Sub} list={this.state.list}/>
+			</View>
+		</ScrollView>
 		);
 	}
 }
