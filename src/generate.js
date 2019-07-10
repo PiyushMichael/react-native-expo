@@ -1,20 +1,20 @@
 import React from 'react';
-import {StyleSheet,Text,View,TouchableWithoutFeedback} from 'react-native';
+import {StyleSheet,Text,View,TouchableWithoutFeedback, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 
 const generate = (props) => {
 	return(
 		<>
-			<TouchableWithoutFeedback onPress={props.pressAdd}>
-				<View style={styles.generator}>
-					<Text style={{color: '#fff'}}>Add Number</Text>
+			<TouchableOpacity style={styles.generator} onPress={props.pressAdd}>
+				<View>
+					<Text style={{color: '#fff'}}>Add Number in list</Text>
 				</View>
-			</TouchableWithoutFeedback>
-			<TouchableWithoutFeedback onPress={props.pressSub}>
-				<View style={styles.generator}>
-					<Text style={{color: '#fff'}}>Subtract Number</Text>
+			</TouchableOpacity>
+			<TouchableOpacity style={styles.generator}>
+				<View>
+					<Text style={{color: '#fff'}}>Remove Number from list</Text>
 				</View>
-			</TouchableWithoutFeedback>
+			</TouchableOpacity>
 		</>
 	);
 };

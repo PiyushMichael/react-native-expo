@@ -23,5 +23,13 @@ export const styles = StyleSheet.create({
 		padding: 10,
 		width: '100%',
 		alignItems: 'center'
+	},
+	list: {
+		width: '100%',
+		alignItems: 'center',
+		backgroundColor: '#f2f2f2',
+		marginTop: 10,
+		padding: 10,
+		fontSize: 20
 	}
 });
