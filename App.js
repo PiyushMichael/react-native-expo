@@ -5,6 +5,7 @@ import Generate from './src/generate';
 import Lister from './src/lister';
 import Input from './src/input';
 import UserList from './src/user-list';
+import Pick from './src/pick';
 
 const instructions = Platform.select({
 	ios: 'isss an iphone :)',
@@ -42,6 +43,7 @@ class App extends Component<props> {
 			<View style={styles.container}>
 				<Text style={styles.box}>start working on the app!</Text>
 				<Text style={styles.box}>{instructions}</Text>
+				<Pick />
 				<Input AddUser={this.addUser} typing={this.typed} value={this.state.text} />
 				<UserList  users={this.state.users} />
 				<Generate pressAdd={this.Add} pressSub={this.Sub} />
