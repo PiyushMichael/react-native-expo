@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import {Platform,StyleSheet, Text, View,ScrollView } from 'react-native';
+import {Platform,StyleSheet, Text, View,ScrollView,ActivityIndicator} from 'react-native';
 import {styles} from './src/styles';
+/*---------------------------------------------------------------*/
 import Generate from './src/generate';
 import Lister from './src/lister';
 import Input from './src/input';
 import UserList from './src/user-list';
 import Pick from './src/pick';
+import Imager from './src/imager';
+import ModalCom from './src/modal';
 
 const instructions = Platform.select({
 	ios: 'isss an iphone :)',
@@ -41,9 +44,12 @@ class App extends Component<props> {
 		return (
 		<ScrollView style={styles.scroller}>
 			<View style={styles.container}>
+				<ModalCom />
 				<Text style={styles.box}>start working on the app!</Text>
 				<Text style={styles.box}>{instructions}</Text>
 				<Pick />
+				<ActivityIndicator size='large' color="#a2a2a2" animating={true}/>
+				<Imager />
 				<Input AddUser={this.addUser} typing={this.typed} value={this.state.text} />
 				<UserList  users={this.state.users} />
 				<Generate pressAdd={this.Add} pressSub={this.Sub} />

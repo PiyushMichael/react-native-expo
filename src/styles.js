@@ -48,5 +48,23 @@ export const styles = StyleSheet.create({
 		borderColor: '#cecece',
 		padding: 10,
 		marginTop: 10
+	},
+	imager: {
+		width: '100%',
+		height:200,
+		marginTop: 10
+	},
+	imager1: {
+		width: '100%',
+		height:400,
+		marginTop: 10
+	},
+	modal: {
+		marginTop: 200,
+		padding: 50,
+		backgroundColor: '#f2faf2',
+		fontSize: 20,
+		borderColor: 'black',
+		borderWidth:5
 	}
 });
